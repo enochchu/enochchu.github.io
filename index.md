@@ -4,3 +4,11 @@
 
 layout: home
 ---
+
+<img src="./assets/portrait.jpg" />
+
+<h1>Hi! My name is <a href="https://github.com/enochchu">Enoch Chu</a>!</h1>
+
+## I write code!
+
+You can find my resume here: [pdf](./assets/resume.pdf)
