@@ -1,0 +1,25 @@
+{
+  "name": "react-enoch-repl",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://enochchu.github.io",
+  "dependencies": {
+    "gh-pages": "^1.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "deploy": "gh-pages -b master -d build",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,53 @@
+body {
+	background: #000;
+}
+
+.cli {
+	padding: 1em;
+}
+
+.cli, .cli-input input {
+	font-family: monospace;
+	background: #000;
+	color: #CCC;
+	width: 50%;
+}
+
+.cli-input::before {
+	content: "guest@enochchu.github.io:~$ ";
+	font-weight: bold;
+	width: 100%;
+}
+
+.cli-input {
+	padding: 1em 0;
+}
+
+.cli-input input {
+	border-bottom: 1px solid #CCC;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+}
+
+.cli .cli-result {
+	list-style: none;
+	padding: 0px;
+	margin: 0;
+}
+
+.cli-result .line {
+	line-height: 1.5em;
+}
+
+.cli a {
+	color: #FFF;
+}
+
+.initial-prompt {
+	padding-bottom: 3em;
+}
+
+.initial-prompt a {
+	padding-right: 1em;
+}
