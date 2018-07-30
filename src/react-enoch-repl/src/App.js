@@ -40,11 +40,13 @@ class EnochREPLApp extends Component {
 			let command = '';
 
 			const commands = {
+				'config' : this._generateLink('https://github.com/enochchu/config', 'config'),
 				'date' : Date(),
 				'help' : 'What? you need help?',
 				'man': '<div>You are the man now dog!</div>' + this._generateYoutubeLink('IPjvDE-rKo0'),
 				'random' : Math.random(),
-				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf', 'Resume.pdf'),
+				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf', 'resume.pdf'),
+				'stupidfunpictures': this._generateLink('https://github.com/enochchu/stupidfunpictures', 'stupidfunpictures'),
 				'sudo' : 'sudo what?',
 				'whoami': '<div>You are not you. You are me.</div>' + this._generateYoutubeLink('Ra-wC05lZi4')
 			}
