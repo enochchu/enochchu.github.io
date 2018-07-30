@@ -112,7 +112,7 @@ class EnochREPLApp extends Component {
 				<EnochREPLPromptResultView prompts={this.state.prompts} />
 
 				<div className="cli-input">
-					<input type="text" onKeyPress={this._handleKeyPress} ref={(el) => { this.cliInput = el; }} />
+					<input type="text" onKeyPress={this._handleKeyPress} ref={(el) => { this.cliInput = el; }} placeholder="type command here" />
 				</div>
 			</div>
 		)
@@ -153,6 +153,7 @@ class EnochREPLPromptResultView extends Component {
 				<p>
 					<a href="https://github.com/enochchu/" target="_blank" rel="noopener noreferrer">github</a>
 					<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
+					<a href="https://github.com/enochchu/enochchu.github.io/tree/src" target="_blank" rel="noopener noreferrer">src</a>
 					<a href="https://github.com/enochchu/files/">files</a>
 					<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
 					<a href="https://www.linkedin.com/in/enoch-chu-a2606934/" target="_blank" rel="noopener noreferrer">linkedin</a>
