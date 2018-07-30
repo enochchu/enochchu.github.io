@@ -96,7 +96,7 @@ class EnochREPLPromptResultView extends Component {
 	}
 
 	createMarkup(value) {
-		return {__html: value};
+		return { __html: value };
 	}
 
 	render() {
@@ -107,7 +107,7 @@ class EnochREPLPromptResultView extends Component {
 						{ this.state.initDate }
 					</p>
 					<p>
-						{`Welcome to enochchu.github.io.`}
+						{ `Welcome to enochchu.github.io.` }
 					</p>
 
 					<p>
@@ -120,7 +120,7 @@ class EnochREPLPromptResultView extends Component {
 					<div className="cli-result">
 						{
 							this.props.prompts.map(item => (
-								<div className="line" key={item.id} dangerouslySetInnerHTML={this.createMarkup(item.result)} />
+								<div className="line" key={ item.id } dangerouslySetInnerHTML={this.createMarkup( item.result )} />
 							))
 						}
 					</div>
