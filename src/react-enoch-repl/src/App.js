@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 /*
  * TODO Find something to not be dependent on Youtube?
  * TODO Break up _handleKeyPress. Modualize it?
- * TODO Make it mobile friendly.
  */
 
 class EnochREPLApp extends Component {
@@ -110,30 +110,33 @@ class EnochREPLPromptResultView extends Component {
 
 	render() {
 		return (
-			<div>
-				<div className="initial-prompt">
-					<p>
-						{ this.state.initDate }
-					</p>
-					<p>
-						{ `Welcome to enochchu.github.io.` }
-					</p>
+			<div className="cli-result">
+				<p>
+					{ this.state.initDate }
+				</p>
+				<p>
+					{ `Welcome to enochchu.github.io.` }
+				</p>
 
-					<p>
-						<a href="https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
-						<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
-						<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
-					</p>
-				</div>
-				<div>
-					<div className="cli-result">
-						{
-							this.props.prompts.map(item => (
-								<div className="line" key={ item.id } dangerouslySetInnerHTML={this.createMarkup( item.result )} />
-							))
-						}
-					</div>
-				</div>
+				<img src="https://raw.githubusercontent.com/enochchu/enochchu.github.io/master/assets/portrait.jpg" alt="that's me!" />
+
+				<p>
+					<a href="https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
+					<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
+					<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
+				</p>
+
+				<ReactCSSTransitionGroup
+					transitionName="cli-line-animation"
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={300}>
+
+					{
+						this.props.prompts.map(item => (
+							<div className='line' key={ item.id } dangerouslySetInnerHTML={this.createMarkup( item.result )} />
+						))
+					}
+				</ReactCSSTransitionGroup>
 			</div>
 		);
 	}

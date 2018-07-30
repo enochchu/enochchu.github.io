@@ -2,6 +2,10 @@ body {
 	background: #000;
 }
 
+img {
+	max-width: 320px;
+}
+
 .cli {
 	padding: 1em;
 }
@@ -10,7 +14,6 @@ body {
 	font-family: monospace;
 	background: #000;
 	color: #CCC;
-	width: 50%;
 }
 
 .cli-input::before {
@@ -28,6 +31,7 @@ body {
 	border-left: none;
 	border-right: none;
 	border-top: none;
+	width: 480px;
 }
 
 .cli .cli-result {
@@ -36,12 +40,9 @@ body {
 	padding: 0px;
 }
 
-.cli-result .line {
-	line-height: 1.5em;
-}
-
 .cli a {
 	color: #FFF;
+	margin-right: 1em;
 }
 
 .cli a:hover {
@@ -49,10 +50,35 @@ body {
 	color: #000;
 }
 
-.initial-prompt {
-	padding-bottom: 3em;
+.cli-line-animation-enter {
+  opacity: 0.01;
 }
 
-.initial-prompt a {
-	margin-right: 1em;
+.cli-line-animation-enter.cli-line-animation-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.cli-line-animation-leave {
+  opacity: 1;
+}
+
+.cli-line-animation-leave.cli-line-animation-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+@media only screen and (max-width: 1200px) {
+	img {
+		width: 100%;
+	}
+
+	.cli-input:before {
+		content: "~$ ";
+		font-weight: bold;
+	}
+
+	.cli-input input {
+		width: 300px;
+	}
 }
