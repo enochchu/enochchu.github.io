@@ -23,20 +23,20 @@ class EnochREPLApp extends Component {
 			const value = e.target.value;
 
 			// If there is no value, do nothing.
-			if (value === "") {
-				return "";
+			if (value === '') {
+				return '';
 			}
 
-			const args = value.split(" ");
+			const args = value.split(' ');
 
 			// Read
-			let command = "";
+			let command = '';
 
 			const commands = {
 				'date' : Date(),
 				'help' : 'What? you need help?',
 				'man': '<div>You are the man now dog!</div>' + this._generateYoutubeLink('IPjvDE-rKo0'),
-				'resume': 'Here is my resume: ' + this._generateLink("#", "Resume.pdf"),
+				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf', 'Resume.pdf'),
 				'sudo' : 'sudo what?',
 				'whoami': '<div>You are not you. You are me.</div>' + this._generateYoutubeLink('Ra-wC05lZi4')
 			}
@@ -46,7 +46,7 @@ class EnochREPLApp extends Component {
 			}
 
 			// Evaluate
-			const result = command === "" ? args[0] + ": command not found." : command;
+			const result = command === '' ? args[0] + ': command not found.' : command;
 
 			// Print
 			const newPrompt = {
@@ -104,7 +104,7 @@ class EnochREPLPromptResultView extends Component {
 					</div>
 
 					<p>
-						<a href="https://enochchu.github.io/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
+						<a href="https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
 						<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
 						<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
 					</p>
