@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
+/*
+ * TODO Find something to not be dependent on Youtube?
+ * TODO Break up _handleKeyPress. Modualize it?
+ * TODO Make it mobile friendly.
+ */
+
 class EnochREPLApp extends Component {
 	constructor(props) {
 		super(props);
@@ -22,7 +28,6 @@ class EnochREPLApp extends Component {
 		if (e.key === 'Enter') {
 			const value = e.target.value;
 
-			// If there is no value, do nothing.
 			if (value === '') {
 				return '';
 			}
@@ -36,6 +41,7 @@ class EnochREPLApp extends Component {
 				'date' : Date(),
 				'help' : 'What? you need help?',
 				'man': '<div>You are the man now dog!</div>' + this._generateYoutubeLink('IPjvDE-rKo0'),
+				'random' : Math.random(),
 				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf', 'Resume.pdf'),
 				'sudo' : 'sudo what?',
 				'whoami': '<div>You are not you. You are me.</div>' + this._generateYoutubeLink('Ra-wC05lZi4')
