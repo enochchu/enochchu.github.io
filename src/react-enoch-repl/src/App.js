@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 /*
+ * FIXME Scroll doesn't work because when Youtube is generated
+
  * TODO Find something to not be dependent on Youtube?
  * TODO Break up _handleKeyPress. Modualize it?
  * TODO Make it mobile friendly.
