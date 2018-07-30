@@ -110,9 +110,6 @@ class EnochREPLPromptResultView extends Component {
 						{`Welcome to enochchu.github.io.`}
 					</p>
 
-					<div>
-					</div>
-
 					<p>
 						<a href="https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
 						<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
