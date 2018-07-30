@@ -21,12 +21,35 @@ class EnochREPLApp extends Component {
 		this.cliInput.scrollIntoView({ behavior: "smooth" });
 	}
 
+	_generateCat(args) {
+		let result = this._generateYoutubeLink('v2GCfSGFkG0');
+
+		if (args.length <= 1) {
+			return result;
+		}
+
+		const commands = {
+			'cat' : "meow!",
+			'meta' : this._generateIframe('/')
+		}
+
+		if (args[1] in commands) {
+			result = commands[args[1]];
+		}
+
+		return result;
+	}
+
 	_generateLink(link, label) {
 		return '<a href="' + link + '" target="_blank" rel="noopener noreferrer">' + label + '</a>';
 	}
 
+	_generateIframe(link, label) {
+		return '<a href="' + link + '" target="_blank" rel="noopener noreferrer">' + label + '</a><br /><iframe width="640" height="360" src="' + link + '"></iframe>';
+	}
+
 	_generateYoutubeLink(youtubeId) {
-		return '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1" frameborder="0"></iframe>';
+		return '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1"></iframe>';
 	}
 
 	_handleKeyPress(e) {
@@ -37,49 +60,48 @@ class EnochREPLApp extends Component {
 				return;
 			}
 
-			this._printPrompt("> " + value);
-
+			// Read
 			const args = value.split(' ');
 
-			// Read
 			let command = '';
 
 			const commands = {
+				'cat' : this._generateCat(args),
 				'config' : this._generateLink('https://github.com/enochchu/config', 'config'),
 				'date' : Date(),
 				'help' : 'What? you need help?',
 				'man': '<div>You are the man now dog!</div>' + this._generateYoutubeLink('IPjvDE-rKo0'),
 				'random' : Math.random(),
-				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf', 'resume.pdf'),
-				'stupidfunpictures': this._generateLink('https://github.com/enochchu/stupidfunpictures', 'stupidfunpictures'),
+				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/enochchu.github.io/raw/master/static/resume.pdf', 'resume.pdf'),
+				'stupidfunpictures' : this._generateLink('https://github.com/enochchu/stupidfunpictures', 'stupidfunpictures'),
 				'sudo' : 'sudo what?',
-				'whoami': '<div>You are not you. You are me.</div>' + this._generateYoutubeLink('Ra-wC05lZi4')
+				'whoami': '<div>You are not you. You are me.</div>' + this._generateYoutubeLink('Ra-wC05lZi4'),
 			}
 
 			if (args[0] in commands) {
-				command = commands[value];
+				command = commands[args[0]];
 			}
 
 			// Evaluate
 			const result = command === '' ? args[0] + ': command not found.' : command;
 
 			// Print
-			this._printPrompt(result);
+			this._printPrompt(value, result);
 
 			// Loop
 			e.target.value = "";
 		}
 	}
 
-	_printPrompt(message) {
-		if (message === '') {
+	_printPrompt(value, result) {
+		if (result === '') {
 			return;
 		}
 
 		return this.setState(prevState => ({
 			prompts: prevState.prompts.concat({
 				id: Date.now(),
-				result: message
+				result: '> ' + value + '<br />' + result
 			})
 		}));
 	}
@@ -118,14 +140,14 @@ class EnochREPLPromptResultView extends Component {
 					{ `Welcome to enochchu.github.io.` }
 				</p>
 
-				<img src="https://raw.githubusercontent.com/enochchu/enochchu.github.io/master/assets/portrait.jpg" alt="that's me!" />
+				<img src="/static/portrait.jpg" alt="that's me!" />
 
 				<p>
 					{ `Hi! My name is Enoch! I write code!` }
 				</p>
 
 				<p>
-					<a href="https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
+					<a href="https://github.com/enochchu/enochchu.github.io/raw/master/static/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
 					<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
 					<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
 				</p>
