@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 
 /*
- * FIXME Scroll doesn't work because when Youtube is generated
-
  * TODO Find something to not be dependent on Youtube?
  * TODO Break up _handleKeyPress. Modualize it?
  * TODO Make it mobile friendly.
@@ -17,6 +15,10 @@ class EnochREPLApp extends Component {
 
 		this._handleKeyPress = this._handleKeyPress.bind(this);
 		this._printPrompt = this._printPrompt.bind(this);
+	}
+
+	componentDidUpdate() {
+		this.cliInput.scrollIntoView({ behavior: "smooth" });
 	}
 
 	_generateLink(link, label) {
@@ -66,8 +68,6 @@ class EnochREPLApp extends Component {
 
 			// Loop
 			e.target.value = "";
-
-			window.scrollTo(0, document.body.scrollHeight);
 		}
 	}
 
@@ -90,7 +90,7 @@ class EnochREPLApp extends Component {
 				<EnochREPLPromptResultView prompts={this.state.prompts} />
 
 				<div className="cli-input">
-					<input type="text" onKeyPress={this._handleKeyPress} />
+					<input type="text" onKeyPress={this._handleKeyPress} ref={(el) => { this.cliInput = el; }} />
 				</div>
 			</div>
 		)
