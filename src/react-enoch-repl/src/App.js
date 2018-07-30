@@ -72,7 +72,7 @@ class EnochREPLApp extends Component {
 				'help' : 'What? you need help?',
 				'man': '<div>You are the man now dog!</div>' + this._generateYoutubeLink('IPjvDE-rKo0'),
 				'random' : Math.random(),
-				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/enochchu.github.io/raw/master/static/resume.pdf', 'resume.pdf'),
+				'resume': 'Here is my resume: ' + this._generateLink('https://github.com/enochchu/files/raw/master/resume.pdf', 'resume.pdf'),
 				'stupidfunpictures' : this._generateLink('https://github.com/enochchu/stupidfunpictures', 'stupidfunpictures'),
 				'sudo' : 'sudo what?',
 				'whoami': '<div>You are not you. You are me.</div>' + this._generateYoutubeLink('Ra-wC05lZi4'),
@@ -140,16 +140,22 @@ class EnochREPLPromptResultView extends Component {
 					{ `Welcome to enochchu.github.io.` }
 				</p>
 
-				<img src="/static/portrait.jpg" alt="that's me!" />
+				<img src="https://raw.githubusercontent.com/enochchu/files/master/portrait.jpg" alt="that's me!" />
 
 				<p>
 					{ `Hi! My name is Enoch! I write code!` }
 				</p>
 
 				<p>
-					<a href="https://github.com/enochchu/enochchu.github.io/raw/master/static/resume.pdf">Download my resume.pdf</a>
-					<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
+					<a href="https://github.com/enochchu/files/raw/master/resume.pdf">Download my resume.pdf</a>
+				</p>
+
+				<p>
+					<a href="https://github.com/enochchu/" target="_blank" rel="noopener noreferrer">github</a>
 					<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
+					<a href="https://github.com/enochchu/files/">files</a>
+					<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
+					<a href="https://www.linkedin.com/in/enoch-chu-a2606934/" target="_blank" rel="noopener noreferrer">linkedin</a>
 				</p>
 
 				<ReactCSSTransitionGroup
