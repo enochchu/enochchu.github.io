@@ -32,8 +32,8 @@ body {
 
 .cli .cli-result {
 	list-style: none;
-	padding: 0px;
 	margin: 0;
+	padding: 0px;
 }
 
 .cli-result .line {
@@ -44,10 +44,15 @@ body {
 	color: #FFF;
 }
 
+.cli a:hover {
+	background-color: #FFF;
+	color: #000;
+}
+
 .initial-prompt {
 	padding-bottom: 3em;
 }
 
 .initial-prompt a {
-	padding-right: 1em;
+	margin-right: 1em;
 }
