@@ -121,6 +121,10 @@ class EnochREPLPromptResultView extends Component {
 				<img src="https://raw.githubusercontent.com/enochchu/enochchu.github.io/master/assets/portrait.jpg" alt="that's me!" />
 
 				<p>
+					{ `Hi! My name is Enoch! I write code!` }
+				</p>
+
+				<p>
 					<a href="https://github.com/enochchu/enochchu.github.io/raw/master/assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
 					<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
 					<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
