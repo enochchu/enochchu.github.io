@@ -16,6 +16,7 @@ class EnochREPLApp extends Component {
 		this.state = { prompts: [] };
 
 		this._handleKeyPress = this._handleKeyPress.bind(this);
+		this._printPrompt = this._printPrompt.bind(this);
 	}
 
 	_generateLink(link, label) {
@@ -31,8 +32,10 @@ class EnochREPLApp extends Component {
 			const value = e.target.value;
 
 			if (value === '') {
-				return '';
+				return;
 			}
+
+			this._printPrompt("> " + value);
 
 			const args = value.split(' ');
 
@@ -59,20 +62,26 @@ class EnochREPLApp extends Component {
 			const result = command === '' ? args[0] + ': command not found.' : command;
 
 			// Print
-			const newPrompt = {
-				id: Date.now(),
-				result: result
-			}
-
-			this.setState(prevState => ({
-				prompts: prevState.prompts.concat(newPrompt)
-			}));
+			this._printPrompt(result);
 
 			// Loop
 			e.target.value = "";
 
 			window.scrollTo(0, document.body.scrollHeight);
 		}
+	}
+
+	_printPrompt(message) {
+		if (message === '') {
+			return;
+		}
+
+		return this.setState(prevState => ({
+			prompts: prevState.prompts.concat({
+				id: Date.now(),
+				result: message
+			})
+		}));
 	}
 
 	render() {
