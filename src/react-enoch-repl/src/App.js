@@ -147,7 +147,7 @@ class EnochREPLPromptResultView extends Component {
 				</p>
 
 				<p>
-					<a href="https://github.com/enochchu/enochchu.github.io/raw/master/static/resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf</a>
+					<a href="https://github.com/enochchu/enochchu.github.io/raw/master/static/resume.pdf">Download my resume.pdf</a>
 					<a href="https://github.com/enochchu/stupidfunpictures" target="_blank" rel="noopener noreferrer">stupidfunpictures</a>
 					<a href="https://github.com/enochchu/config" target="_blank" rel="noopener noreferrer">config</a>
 				</p>
