@@ -1,5 +1,5 @@
 {
-  "name": "react-enoch-repl",
+  "name": "react-enoch-github-io",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://enochchu.github.io",
@@ -7,7 +7,7 @@
     "gh-pages": "^1.2.0",
     "react": "^16.4.1",
     "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.14.0",
     "react-pdf": "^3.0.5",
     "react-scripts": "1.1.4"
   },
