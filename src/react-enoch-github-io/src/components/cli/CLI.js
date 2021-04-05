@@ -15,6 +15,10 @@ class CLI extends Component {
         this._printPrompt = this._printPrompt.bind(this);
     }
 
+    componentDidUpdate() {
+        this.cliInput.scrollIntoView({ behavior: "smooth" });
+    }
+
     getWelcomeDialog() {
         return (
             <div className="welcome">
@@ -32,7 +36,7 @@ class CLI extends Component {
                 </p>
 
                 <p>
-                    <a href="https://github.com/enochchu/files/raw/master/resume.pdf">Download my resume.pdf</a>
+                    <a href="https://github.com/enochchu/files/raw/master/resume.pdf">Download my Résumé!   </a>
                 </p>
 
                 <p>
@@ -70,6 +74,8 @@ class CLI extends Component {
             let command = '';
 
             const commands = {
+                '<' : 'ugh! what are you trying to do?!?',
+                '>' : 'ugh! really! what are you trying to do?!?',
                 'cat' : this._generateYoutubeLink('v2GCfSGFkG0'),
                 'date' : Date(),
                 'help' : 'What? you need help?',
@@ -83,16 +89,20 @@ class CLI extends Component {
                 command = commands[args[0]];
             }
 
+            // Special Characters
+            if (value[0] === "<") {
+                command = commands['<']
+            }
+
+            if (value[0] === ">") {
+                command = commands['>']
+            }
+
             // Evaluate
             const result = command === '' ? args[0] + ': command not found.' : command;
 
             // Print
             this._printPrompt(value, result);
-
-            if (command === 'clear') {
-                this._clearPrompt();
-                debugger;
-            }
 
             // Loop
             e.target.value = "";
