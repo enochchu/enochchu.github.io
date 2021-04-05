@@ -1,9 +1,29 @@
 body {
 	background: #000;
+	font-family: monospace;
 }
 
 img {
 	max-width: 320px;
+}
+
+.links {
+	background: white;
+	padding: 0 1em;
+}
+
+.links .links-title,
+.links a {
+	padding-right: 1em;
+}
+
+.links a {
+	text-decoration: none;
+}
+
+.links a:hover {
+	background: black;
+	color: white;
 }
 
 .cli {
@@ -11,7 +31,6 @@ img {
 }
 
 .cli, .cli-input input {
-	font-family: monospace;
 	background: #000;
 	color: #CCC;
 }
