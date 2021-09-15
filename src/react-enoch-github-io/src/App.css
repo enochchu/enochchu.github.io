@@ -29,69 +29,6 @@ img {
 	color: white;
 }
 
-.cli {
-	padding: 1em;
-}
-
-.cli, .cli-input input {
-	background: #000;
-	color: #CCC;
-	font-family: monospace;
-}
-
-.cli-input::before {
-	content: "guest@enochchu.github.io:~$ ";
-	font-weight: bold;
-	width: 100%;
-}
-
-.cli-input {
-	padding: 1em 0;
-}
-
-.cli-input input {
-	border-bottom: 1px solid #CCC;
-	border-left: none;
-	border-right: none;
-	border-top: none;
-	width: 480px;
-}
-
-.cli .cli-result {
-	list-style: none;
-	margin: 0;
-	padding: 0px;
-	line-height: 1.5em;
-}
-
-.cli a {
-	color: #FFF;
-	margin-right: 1em;
-}
-
-.cli a:hover {
-	background-color: #FFF;
-	color: #000;
-}
-
-.cli-line-animation-enter {
-  opacity: 0.01;
-}
-
-.cli-line-animation-enter.cli-line-animation-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.cli-line-animation-leave {
-  opacity: 1;
-}
-
-.cli-line-animation-leave.cli-line-animation-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
 @media only screen and (max-width: 1200px) {
 	img {
 		width: 100%;
