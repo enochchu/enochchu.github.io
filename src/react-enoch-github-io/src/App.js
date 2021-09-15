@@ -35,26 +35,28 @@ class App extends Component {
 						</div>
 					</header>
 
-					<Switch>
-						<Route path='/github' component={() => {
-							window.location.href = 'https://github.com/enochchu';
-							return null;
-						}} />
+					<main>
+						<Switch>
+							<Route path='/github' component={() => {
+								window.location.href = 'https://github.com/enochchu';
+								return null;
+							}} />
 
-						<Route path='/blog'>
-							<Blog />
-						</Route>
+							<Route path='/blog'>
+								<Blog />
+							</Route>
 
-						<Route path='/resume' component={() => {
-							window.location.href = 'https://github.com/enochchu/files/raw/master/resume.pdf';
-							return null;
-						}} />
+							<Route path='/resume' component={() => {
+								window.location.href = 'https://github.com/enochchu/files/raw/master/resume.pdf';
+								return null;
+							}} />
 
-						<Route path='/'>
-							<CLI />
-						</Route>
-					</Switch>
-				</Router>
+							<Route path='/'>
+								<CLI />
+							</Route>
+						</Switch>
+					</main>
+			</Router>
 			</div>
 		)
 	}

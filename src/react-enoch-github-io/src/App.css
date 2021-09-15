@@ -1,3 +1,5 @@
+/*-------- Global --------*/
+
 body {
 	background: #000;
 	font-family: monospace;
@@ -6,6 +8,8 @@ body {
 img {
 	max-width: 320px;
 }
+
+/*-------- Header Styles --------*/
 
 .links {
 	background: white;
@@ -29,17 +33,16 @@ img {
 	color: white;
 }
 
+/*-------- Header Styles --------*/
+
+main {
+	padding-top: 1em;
+}
+
+/*-------- Moble / Media Queries --------*/
+
 @media only screen and (max-width: 1200px) {
 	img {
 		width: 100%;
-	}
-
-	.cli-input:before {
-		content: "~$ ";
-		font-weight: bold;
-	}
-
-	.cli-input input {
-		width: 300px;
 	}
 }
