@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CLI from "./components/cli/CLI"
+import Blog from "./components/blog/Blog"
 
 import './App.css';
 
@@ -11,41 +12,49 @@ import {
   Link
 } from "react-router-dom";
 
+/*
+ * TODO Consider making a component registry instead of a big switch statement
+ */
 
 class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div className="links">
-					<span className="links-title">
-						Links:
-					</span>
+				<Router>
+					<header>
+						<div className="links">
+							<span className="links-title">
+								Links:
+							</span>
+							<span>
+								<Link to="/">Home</Link>
+								<Link to="/blog">Blog</Link>
+								<Link to="/github">Github</Link>
+								<Link to="/resume">Résumé</Link>
+							</span>
+						</div>
+					</header>
 
-					<Router>
-						<span>
-							<Link to="/">Home</Link>
-							<Link to="/blog">Blog</Link>
-							<Link to="/github">Github</Link>
-							<Link to="/resume">Résumé</Link>
-						</span>
-						<Switch>
-							<Route path='/github' component={() => { 
-								window.location.href = 'https://github.com/enochchu'; 
-								return null;
-							}} />
-							<Route path='/blog' component={() => { 
-								alert("Coming Soon!");
-								return null;
-							}} />
-							<Route path='/resume' component={() => { 
-								window.location.href = 'https://github.com/enochchu/files/raw/master/resume.pdf'; 
-								return null;
-							}} />
-						</Switch>
-					</Router>
-				</div>
+					<Switch>
+						<Route path='/github' component={() => {
+							window.location.href = 'https://github.com/enochchu';
+							return null;
+						}} />
 
-				<CLI />
+						<Route path='/blog'>
+							<Blog />
+						</Route>
+
+						<Route path='/resume' component={() => {
+							window.location.href = 'https://github.com/enochchu/files/raw/master/resume.pdf';
+							return null;
+						}} />
+
+						<Route path='/'>
+							<CLI />
+						</Route>
+					</Switch>
+				</Router>
 			</div>
 		)
 	}
