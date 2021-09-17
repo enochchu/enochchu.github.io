@@ -10,6 +10,6 @@ describe("CLI", () => {
         }
         catch (e) {
             fail();
-        }t
+        }
     });
 });
