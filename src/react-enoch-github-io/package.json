@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/core": "^7.15.5",
     "@babel/register": "^7.15.3",
+    "@testing-library/react": "^12.1.0",
     "babel-preset-react-app": "^10.0.0",
     "cross-env": "^7.0.3",
     "dompurify": "^2.2.7",
@@ -25,11 +26,17 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "test-jasmine": "cross-env NODE_ENV=test jasmine"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  }
 }
