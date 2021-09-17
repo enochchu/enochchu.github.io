@@ -1,3 +1,48 @@
-.blog {
-    background: white;
+/*-------- Blog CSS --------*/
+
+.blog.dark {
+    background: #000;
+    color: #FFF;
+    font-family: Sans-serif;
+}
+
+/*-------- Post --------*/
+
+.post {
+    padding: 1em 3em;
+    border: 1px solid #CCC;
+    position: relative;
+    top: 3em;
+}
+
+.post.san-serif {
+    font-family: Sans-serif;
+    line-height: 1.5em;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.post h1 {
+    padding-bottom: 0.75em;
+    border-bottom: 1px solid #CCC;
+}
+
+.post a {
+    color: #CCC;
+}
+
+.post table {
+    border-collapse: collapse;
+}
+
+.post table tr > td,
+.post table tr > th {
+    border: 1px solid #CCC;
+    padding: 0.2em 0.4em;
+}
+
+.post pre,
+.post blockquote {
+    border-left: 1px solid #CCC;
+    padding-left: 2em;
 }

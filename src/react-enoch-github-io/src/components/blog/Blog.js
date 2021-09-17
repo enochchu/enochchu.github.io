@@ -35,8 +35,8 @@ class Blog extends Component {
 
     render() {
         return (
-            <div className="blog">
-                <div dangerouslySetInnerHTML={this.get_post()} />
+            <div className="blog dark">
+                <div className="post san-serif" dangerouslySetInnerHTML={this.get_post()} />
             </div>
         )
     }
