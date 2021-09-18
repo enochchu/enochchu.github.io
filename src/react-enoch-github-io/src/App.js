@@ -42,9 +42,9 @@ class App extends Component {
 								return null;
 							}} />
 
-							<Route path='/blog'>
-								<Blog />
-							</Route>
+							<Route path='/blog' component={Blog} />
+
+							<Route path="/blog/post/:title" component={Blog} />
 
 							<Route path='/resume' component={() => {
 								window.location.href = 'https://github.com/enochchu/files/raw/master/resume.pdf';

@@ -1,10 +1,36 @@
 import React, { Component } from "react";
 
 import "./Blog.css"
-import postURL from "./../../resources/posts/Hello-World.md"
+import helloWorldURL from "./../../resources/posts/Hello-World.md"
 import Post from "./Post";
 
+const directory = {
+    "Hello-World.md": helloWorldURL
+}
+
+const importAll = (r) => r.keys().map(r);
+
+const markdownFiles = importAll(require.context('./../../resources/posts/', false, /\.md$/))
+    .sort()
+    .reverse();
+
 class Blog extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts: markdownFiles
+        }
+    }
+
+    componentDidMount() {
+        this.setState((state, props) => {
+            return {
+                post: "Hello-World.md",
+                ...props
+            }
+        });
+    }
+
     toggleLightDarkMode(event) {
         let blogNode = event.currentTarget.closest(".blog");
         blogNode.classList.remove("preload")
@@ -21,7 +47,13 @@ class Blog extends Component {
                     </button>
                 </div>
 
-                <Post url={postURL} />
+                {
+                    this.state.posts.map((url, idx) => (
+                        <div className="post-card" key={idx}>
+                            <Post url={url} />
+                        </div>
+                    ))
+                }
             </div>
         )
     }
