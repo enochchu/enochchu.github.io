@@ -31,6 +31,17 @@
     color: #CCC;
 }
 
+.post hr:first-of-type,
+.post p:first-of-type {
+    font-family: monospace;
+    text-align: center;
+}
+
+.post.hide-metadata hr:first-of-type,
+.post.hide-metadata p:first-of-type {
+    display: none;
+}
+
 .post table {
     border-collapse: collapse;
 }
