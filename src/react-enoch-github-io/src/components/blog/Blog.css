@@ -1,59 +1,68 @@
 /*-------- Blog CSS --------*/
 
-.blog.dark {
-    background: #000;
-    color: #FFF;
-    font-family: Sans-serif;
+@keyframes darktolight {
+    from {
+        background: #000;
+        color: #FFF;
+    }
+    to {
+        background: #FFF;
+        color: #000;
+    }
 }
 
-/*-------- Post --------*/
-
-.post {
-    padding: 1em 3em;
-    border: 1px solid #CCC;
-    position: relative;
-    top: 3em;
+@keyframes lighttodark {
+    from {
+        background: #FFF;
+        color: #000;
+    }
+    to {
+        background: #000;
+        color: #FFF;
+    }
 }
 
-.post.san-serif {
+.blog {
     font-family: Sans-serif;
-    line-height: 1.5em;
-    margin: 0 auto;
+    margin: 3em auto;
     width: 50%;
 }
 
-.post h1 {
-    padding-bottom: 0.75em;
-    border-bottom: 1px solid #CCC;
+.blog.preload {
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
 }
 
-.post a {
-    color: #CCC;
-}
-
-.post hr:first-of-type,
-.post p:first-of-type {
-    font-family: monospace;
-    text-align: center;
-}
-
-.post.hide-metadata hr:first-of-type,
-.post.hide-metadata p:first-of-type {
-    display: none;
-}
-
-.post table {
-    border-collapse: collapse;
-}
-
-.post table tr > td,
-.post table tr > th {
+.blog.dark {
     border: 1px solid #CCC;
-    padding: 0.2em 0.4em;
+    background: #000;
+    color: #FFF;
+
+    animation-name: lighttodark;
+    animation-duration: 1s;
 }
 
-.post pre,
-.post blockquote {
-    border-left: 1px solid #CCC;
-    padding-left: 2em;
+.blog.light {
+    background: #FFF;
+    color: #000;
+
+    animation-name: darktolight;
+    animation-duration: 1s;
+}
+
+/*-------- Blog Post Controls --------*/
+
+.blog .blog-controls {
+    position: fixed;
+    width: 32px;
+}
+
+.blog .blog-controls button {
+    margin: 1.33em 0;
+    padding: 1em 0.5em;
+}
+
+.blog.light .post a {
+    color: #0000EE;
 }

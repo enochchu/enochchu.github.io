@@ -1,0 +1,51 @@
+.post {
+    padding: 1em 3em;
+    line-height: 1.5em;
+}
+
+.post h1 {
+    padding-bottom: 0.75em;
+    border-bottom: 1px solid #CCC;
+}
+
+.post a {
+    color: #CCC;
+}
+
+.post h2, .post h3 {
+    text-decoration: underline;
+}
+
+.post h3 {
+    font-weight: lighter;
+}
+
+.post table {
+    border-collapse: collapse;
+}
+
+.post table tr > td,
+.post table tr > th {
+    border: 1px solid #CCC;
+    padding: 0.2em 0.4em;
+}
+
+.post pre,
+.post blockquote {
+    border-left: 1px solid #CCC;
+    padding-left: 2em;
+}
+
+.header {
+    background: #30363e;
+    color: #FFF;
+    display: flex;
+    font-family: monospace;
+    justify-content: space-between;
+    padding: 0.75em 3em;
+}
+
+.header a {
+    color: #FFF;
+}
+
