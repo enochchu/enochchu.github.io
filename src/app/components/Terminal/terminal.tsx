@@ -1,6 +1,6 @@
 'use client';
 
-import React, {ReactElement, useState} from 'react';
+import React, {FormEvent, ReactElement, useState} from 'react';
 
 const ID_COMMAND_INPUT = "command-input";
 
@@ -24,9 +24,9 @@ export function Terminal(): ReactElement {
   const [command, setCommand] = useState('');
   const [history, setHistory] = useState(initialPrompt);
 
-  const handleCommandSubmit = (event: any): void => {
+  const handleCommandSubmit = (event: FormEvent): void => {
     event.preventDefault();
-    let newState: any = [...history, `$ ${command}`];
+    let newState: string[] = [...history, `$ ${command}`];
 
     switch (command.trim()) {
       case 'help':
@@ -59,7 +59,7 @@ export function Terminal(): ReactElement {
           <div key={index}>{line}</div>
         ))
       }
-      <form onSubmit={handleCommandSubmit}>
+      <form onSubmit={(e) => handleCommandSubmit(e)}>
         <span>$ </span>
         <input id={ID_COMMAND_INPUT}
                type="text"
@@ -71,8 +71,8 @@ export function Terminal(): ReactElement {
 
         <datalist id="commands">
           {
-            AUTOCOMPLETE_COMMANDS.map((command) => (
-              <option value={command}/>
+            AUTOCOMPLETE_COMMANDS.map((command, idx) => (
+              <option key={idx} value={command}/>
             ))
           }
         </datalist>
